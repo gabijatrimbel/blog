@@ -19,21 +19,8 @@ Route::view('about', 'about');
 
 //Route::view('contact', 'contact');
 
-Route::get('contact', function(){
-  $name = 'Gabija';
-  $email = 'gabija@mailerlite.com';
-  $phone = '861011777';
+Route::get('contact-us', 'ContactsController@index')->name('show_contacts');
 
-  $interests = [
-    'Taskiukas',
-    'Travel',
-    'Turqouise'
-  ];
-
-  $data = compact('name', 'email', 'phone', 'interests');
-
-  return view('contact', $data);
-});
 
 Route::get('locations', function(){
   $birthCity = 'Vilnius';
@@ -50,3 +37,9 @@ Route::get('locations', function(){
   return view('locations', $locations);
 
 });
+
+//Route::resource('posts', 'PostController');
+
+Route::get('posts', 'PostController@index')->name('posts.index');
+Route::get('posts/{id}', 'PostController@show')->name('posts.show');
+Route::get('posts/create', 'PostController@create')->name('posts.create');
