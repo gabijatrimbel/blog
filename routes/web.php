@@ -43,3 +43,7 @@ Route::get('locations', function(){
 Route::get('posts', 'PostController@index')->name('posts.index');
 Route::get('posts/{id}', 'PostController@show')->name('posts.show');
 Route::get('posts/create', 'PostController@create')->name('posts.create');
+
+Route::get('storage', 'FileController@index')->name('storage.index');
+Route::get('storage/{id}', 'FileController@show')->name('storage.show');
+Route::get('storage/create', 'FileController@create')->name('storage.create');
